@@ -33,24 +33,9 @@ O objetivo principal é aplicar e consolidar os conceitos de desenvolvimento Fro
 
 ---
 
-## 📂 Estrutura de Pastas
 
-A aplicação segue uma estrutura de componentização individualizada, onde cada componente possui sua própria pasta com lógica (`.jsx`) e estilização (`.module.css`):
 
-```text
-src/
-├── assets/          # Imagens, ícones e arquivos estáticos
-├── components/      # Componentes modularizados da aplicação
-│   ├── Board/
-│   │   ├── Board.jsx
-│   │   └── Board.module.css
-│   ├── Square/
-│   │   ├── Square.jsx
-│   │   └── Square.module.css
-│   └── Scoreboard/
-│       ├── Scoreboard.jsx
-│       └── Scoreboard.module.css
-├── styles/          # Estilos globais e variáveis CSS
-│   └── variables.css
-├── App.jsx          # Componente principal
-└── main.jsx         # Ponto de entrada do React via Vite
+
+ **Clonar o repositório:**
+   bash  
+   git clone: https://github.com/Ana-Machioni/jogo_da_velha
