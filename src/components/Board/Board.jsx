@@ -34,6 +34,7 @@ export default function Board({ xIsNext, squares, onPlay }) {
     }
   }, [isDraw]);
 
+  
   let status;
   if (winner) {
     status = 'Ganhador ' + winner;

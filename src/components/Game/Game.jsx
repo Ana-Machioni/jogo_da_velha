@@ -1,10 +1,18 @@
 import { useState } from "react";
 import Board from "../Board/Board.jsx";
 import Square from "../Square/Square.jsx";
+import Scoreboard from "../Scoreboard/Scoreboard.jsx";
+import calculateWinner from "../../utils/calculateWinner.js";
 
 export default function Game() {
   const [history, setHistory] = useState([Array(9).fill(null)]);
   const [currentMove, setCurrentMove] = useState(0);
+
+  const [scoreX, setScoreX] = useState(0);
+  const [scoreO, setScoreO] = useState(0);
+  const [draws, setDraws] = useState(0);
+
+
   const xIsNext = currentMove % 2 === 0;
   const currentSquares = history[currentMove];
 
@@ -34,6 +42,7 @@ export default function Game() {
 
   return (
     <div className="game">
+      <Scoreboard scoreX={scoreX} scoreO={scoreO} draws={draws} />
       <div className="game-board">
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
       </div>

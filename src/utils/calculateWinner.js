@@ -1,7 +1,9 @@
 
+import Square from "../components/Square/Square";
 
 
-  export default function calculateWinner(squares) {
+
+  export default function calculateWinner(square) {
   const lines = [
     [0, 1, 2],
     [3, 4, 5],
@@ -14,8 +16,8 @@
   ];
   for (let i = 0; i < lines.length; i++) {
     const [a, b, c] = lines[i];
-    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-      return squares[a];
+    if (square[a] && square[a] === square[b] && square[a] === square[c]) {
+      return square[a]
     }
   }
   return null;
