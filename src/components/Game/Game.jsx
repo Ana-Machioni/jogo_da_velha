@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Board from "../Board/Board.jsx";
+import Square from "../Square/Square.jsx";
 
 export default function Game() {
   const [history, setHistory] = useState([Array(9).fill(null)]);
@@ -20,9 +21,9 @@ export default function Game() {
   const moves = history.map((squares, move) => {
     let description;
     if (move > 0) {
-      description = 'Go to move #' + move;
+      description = 'Jogada #' + move;
     } else {
-      description = 'Go to game start';
+      description = 'Reiniciar';
     }
     return (
       <li key={move}>

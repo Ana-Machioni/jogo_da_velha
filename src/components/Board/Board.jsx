@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import Swal from "sweetalert2"; 
 import Square from "../Square/Square.jsx";
 import styles from "./Board.module.css";
 import calculateWinner  from "../../utils/calculateWinner.js";
@@ -18,11 +20,25 @@ export default function Board({ xIsNext, squares, onPlay }) {
   }
 
   const winner = calculateWinner(squares);
+  
+  const isDraw = squares.every((square) => square !== null) && !winner;
+
+  useEffect(() => {
+    if (isDraw) {
+      Swal.fire({
+        title: 'Deu Velha! ',
+        text: 'Ninguém venceu esta rodada.',
+        icon: 'info',
+        confirmButtonText: 'Tentar Novamente',
+      });
+    }
+  }, [isDraw]);
+
   let status;
   if (winner) {
-    status = 'Winner: ' + winner;
+    status = 'Ganhador ' + winner;
   } else {
-    status = 'Next player: ' + (xIsNext ? 'X' : 'O');
+    status = 'Proximo jogador ' + (xIsNext ? 'X' : 'O');
   }
 
   return (
