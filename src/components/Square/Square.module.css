@@ -1,19 +1,56 @@
 .square {
   width: 80px;
   height: 80px;
-  margin: 3px;
+
   padding: 0;
-  border: 2px solid #333;
-  background-color: white;
-  font-size: 2rem;
-  font-weight: bold;
-  cursor: pointer;
+  margin: 3px;
+
+  display: flex;
   align-items: center;
   justify-content: center;
-  display: flex;
+
+  background-color: #ffffff;
+
+  border: 3px solid #ff9fc4;
+  border-radius: 18px;
+
+  color: #d94f85;
+
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+
+  cursor: pointer;
+
+  box-shadow: 0 5px 10px rgba(255, 143, 181, 0.25);
+
+  transition: 
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
+
+/* Efeito quando passa o mouse */
 .square:hover {
-  background-color: #f0f0f0;
+  background-color: #ffe3ef;
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 15px rgba(255, 143, 181, 0.35);
 }
 
+
+/* Efeito ao clicar */
+.square:active {
+  transform: scale(0.95);
+}
+
+
+/* Quando o botão recebe foco */
+.square:focus {
+  outline: none;
+  border-color: #ff6fa8;
+
+  box-shadow: 0 0 0 4px rgba(255, 143, 181, 0.25);
+}

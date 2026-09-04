@@ -1,0 +1,216 @@
+.game {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 30px 20px;
+
+  background: linear-gradient(
+    135deg,
+    #fff0f6,
+    #ffe4ef,
+    #fce4f1
+  );
+
+  font-family: Arial, sans-serif;
+}
+
+
+/* Área do tabuleiro */
+.gameBoard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 20px 0;
+}
+
+
+/* Área do histórico de jogadas */
+.gameInfo {
+  background-color: #ffffff;
+
+  border: 2px solid #ffc1d6;
+  border-radius: 20px;
+
+  padding: 20px 30px;
+  margin-top: 15px;
+
+  box-shadow: 0 6px 15px rgba(255, 143, 181, 0.2);
+
+  text-align: center;
+}
+
+
+/* Lista das jogadas */
+.gameInfo ol {
+  list-style: none;
+
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+/* Botões das jogadas */
+.gameInfo button {
+  background-color: #ffd1e1;
+  color: #8a3156;
+
+  border: none;
+  border-radius: 15px;
+
+  padding: 10px 20px;
+
+  font-size: 15px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+
+  box-shadow: 0 3px 8px rgba(255, 143, 181, 0.2);
+}
+
+
+/* Efeito ao passar o mouse */
+.gameInfo button:hover {
+  background-color: #ff9fc4;
+
+  color: white;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 6px 12px rgba(255, 143, 181, 0.3);
+}
+
+
+/* Efeito ao clicar */
+.gameInfo button:active {
+  transform: scale(0.96);
+}
+
+
+/* Responsividade para celular */
+@media (max-width: 600px) {
+  .game {
+    padding: 20px 10px;
+  }
+
+  .gameInfo {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .gameInfo button {
+    width: 100%;
+  }
+}
+
+.game-info ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  gap: 8px;            
+}
+
+
+.game-info button {
+  background-color: var(--button-bg-color, #ffb6c1); /* Seu tom de rosa */
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 8px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.game-info button:hover {
+  background-color: var(--button-bg-hover, #ff99aa);
+  transform: scale(1.05);
+}
+
+.restart-button {
+  margin-top: 20px;
+  padding: 12px 30px;
+
+  background-color: #ffb3c1;
+  color: white;
+
+  border: 3px solid #ff8fa3;
+  border-radius: 12px;
+
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: inherit;
+
+  cursor: pointer;
+
+  box-shadow: 0 5px 0 #ff758f;
+
+  transition: 0.15s;
+}
+
+.restart-button:hover {
+  background-color: #ff9eb2;
+  transform: translateY(-2px);
+  box-shadow: 0 7px 0 #ff758f;
+}
+
+.restart-button:active {
+  transform: translateY(4px);
+  box-shadow: 0 1px 0 #ff758f;
+}
+
+/* Container dos botões de ação */
+.game-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+/* Estilo base compartilhado pelos botões */
+.restart-button,
+.reset-all-button {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Botão de reiniciar apenas a partida */
+.restart-button {
+  background-color: var(--color-primary, #007bff);
+  color: #ffffff;
+  border: 1px solid transparent;
+}
+
+.restart-button:hover {
+  background-color: var(--color-primary-hover, #0056b3);
+}
+
+/* Botão de zerar tudo (Placar + Jogo) - Destaque visual secundário/alerta */
+.reset-all-button {
+  background-color: transparent;
+  color: var(--color-danger, #dc3545);
+  border: 2px solid var(--color-danger, #dc3545);
+}
+
+.reset-all-button:hover {
+  background-color: var(--color-danger, #dc3545);
+  color: #ffffff;
+}
